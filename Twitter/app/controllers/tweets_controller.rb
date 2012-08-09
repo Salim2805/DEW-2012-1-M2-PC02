@@ -3,6 +3,7 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     @tweets = Tweet.all
+	@tweet = Tweet.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,33 @@ class TweetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  #Metodos
+  
+  def read_text
+	@tweet = Tweet.new(params[:tweet])
+	respond_to do |format|
+      format.html
+      format.json { head :no_content }
+    end
+  end
+  
+
+  
+  def read_message
+    @tweet = Tweet.new(params[:tweet])
+    respond_to do |format|
+      format.html
+      format.json { head :no_content }
+    end
+  end
+  
+ def update_status
+ @tweet = Tweet.new(params[:tweet])
+    respond_to do |format|
+      format.html
+      format.json { head :no_content }
+
+end 
+end  
 end
